@@ -10,7 +10,7 @@ class Point:
         self.y = new_y
 
     def __str__(self):
-        return f"The point has coordinates ({self.x}, {self.y})"
+        return f"The point has coordinates ({self.x},{self.y})"
     
 p = Point(2, 4)
 print(p)
