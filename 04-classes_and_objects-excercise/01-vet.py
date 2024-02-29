@@ -21,7 +21,7 @@ class Vet:
             self.animals.remove(animal_name)
             Vet.animals.remove(animal_name)
             Vet.storage -= 1
-            return f"{animal_name} usregistered successfully"
+            return f"{animal_name} unregistered successfully"
 
         else:
             return f"{animal_name} not in the clinic"
