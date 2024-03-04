@@ -20,9 +20,7 @@ class Time:
             else:
                 return number
 
-        
-
-        return f"{format(self.seconds)}:{format(self.minutes)}:{format(self.hours)}"
+        return f"{format(self.hours)}:{format(self.minutes)}:{format(self.seconds)}"
     
     def next_second(self):
         # + 1sec
