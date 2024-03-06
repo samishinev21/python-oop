@@ -21,10 +21,10 @@ class PizzaDelivery:
             if ingredient not in self.ingredients:
                 return f"Wrong ingredient selected! We do not use {ingredient} in {self.name}!"
             elif ingredient in self.ingredients and self.ingredients[ingredient] < quantity:
-                return f"Please check again the desired quantity of {ingredient}"
+                return f"Please check again the desired quantity of {ingredient}!"
             else:
                 self.ingredients[ingredient] -= quantity
-                self.price -= price_per_quantity * quantity
+                self.price -= price_per_quantity * quantity 
         else:
             return f"Pizza {self.name} already prepared, and we can't make any changes!"
 
