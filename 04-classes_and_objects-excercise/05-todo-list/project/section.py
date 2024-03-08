@@ -27,6 +27,13 @@ class Section:
         
         self.tasks = [task for task in self.tasks if not task.completed]
 
+        tasks = []
+        for task in self.tasks:
+            if task.completed == False:
+                tasks.append(task)
+        
+        self.tasks = tasks
+
         return f"Cleared {completed} tasks."
     
     def view_section(self):
