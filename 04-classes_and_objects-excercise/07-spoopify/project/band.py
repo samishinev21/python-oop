@@ -8,7 +8,7 @@ class Band:
             return f"Band {self.name} already has {album.name} in their library."
         
         self.albums.append(album)
-        return f"Band {self.name} has added their newest album {album.name}"
+        return f"Band {self.name} has added their newest album {album.name}."
     
     def remove_album(self, album_name):
         albums = []
@@ -32,7 +32,7 @@ class Band:
         albums = []
 
         for album in self.albums:
-            albums.append(album.details())
+            albums.append(f"== {album.details()}")
 
         info = "\n".join(albums)
 

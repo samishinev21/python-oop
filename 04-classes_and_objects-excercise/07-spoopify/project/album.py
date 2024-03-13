@@ -5,6 +5,8 @@ class Album:
         self.songs = list(songs)
 
     def add_song(self ,song):
+        if song in self.songs:
+            return f"Song is already in the album."
         if song.single:
             return f"Cannot add {song.name}. It's a single"
         elif self.published:
@@ -42,7 +44,7 @@ class Album:
         songs = []
 
         for song in self.songs:
-            songs.append(song.get_info())
+            songs.append(f"== {song.get_info()}")
 
         songs_info = "\n".join(songs)
 
