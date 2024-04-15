@@ -44,11 +44,17 @@ class Gym:
             if trainer.id == sub.trainer_id:
                 result += f"{trainer}\n"
 
+        plan_result = ""
+
         for current_plan in self.plans:
             if sub.exercise_id == current_plan.id:
                 plan = current_plan
-                result += f"{plan}\n"
+                plan_result += f"{plan}\n"
 
         for equipment in self.equipment:
             if plan.equipment_id == equipment.id:
-                result += f"{equipment}"
+                result += f"{equipment}\n"
+
+        result += plan_result
+
+        return result
