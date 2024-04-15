@@ -1,4 +1,4 @@
-from next_id import NextId
+from project.next_id import NextId
 
 class ExercisePlan(NextId):
     id = 0

@@ -1,4 +1,4 @@
-from next_id import NextId
+from project.next_id import NextId
 
 class Trainer(NextId):
     id = 0
