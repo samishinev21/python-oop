@@ -33,7 +33,7 @@ class Truck(Vehicle):
             self.fuel_quantity -= needed_fuel
 
     def refuel(self, fuel):
-        self.fuel_quantity += 95 / 100 * 50
+        self.fuel_quantity += 95 / 100 * fuel
 
 truck = Truck(100, 15)
 truck.drive(5)
