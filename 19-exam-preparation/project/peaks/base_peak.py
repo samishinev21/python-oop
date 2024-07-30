@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class BasePeak(ABC):
-    def __ini__(self, name, elevation):
+    def __init__(self, name, elevation):
         self.name = name
         self.elevation = elevation
         self.difficulty_level = self.calculate_difficulty_level()
@@ -36,4 +36,3 @@ class BasePeak(ABC):
     @abstractmethod
     def calculate_difficulty_level(self):
         pass
-
