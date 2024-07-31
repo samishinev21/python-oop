@@ -3,6 +3,9 @@ from project.peaks.base_peak import BasePeak
 
 
 class ArcticClimber(BaseClimber):
+    def __init__(self, name, strength=200):
+        super().__init__(name, strength)
+
     def climb(self, peak: BasePeak):
         if peak.difficulty_level == "Extreme":
             self.strength = self.strength - 20 * 2
