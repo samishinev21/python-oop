@@ -16,7 +16,7 @@ class BasePeak(ABC):
         if len(value) < 2:
             raise ValueError("Peak name cannot be less than 2 symbols!")
 
-        self.name = value
+        self.__name = value
 
     @property
     def elevation(self):
@@ -27,7 +27,7 @@ class BasePeak(ABC):
         if value < 1500:
             raise ValueError("Peak elevation cannot be below 1500m.")
 
-        self.elevation = value
+        self.__elevation = value
 
     @abstractmethod
     def get_recommended_gear(self):
@@ -36,3 +36,6 @@ class BasePeak(ABC):
     @abstractmethod
     def calculate_difficulty_level(self):
         pass
+
+    def __str__(self):
+        return self.name
