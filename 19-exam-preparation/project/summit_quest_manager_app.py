@@ -144,3 +144,4 @@ print(climbing_app.perform_climbing("Frank", "MountEverest"))
 
 # Get statistics
 print(climbing_app.get_statistics())
+
