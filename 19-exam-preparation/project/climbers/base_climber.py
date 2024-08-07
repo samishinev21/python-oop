@@ -15,7 +15,7 @@ class BaseClimber(ABC):
     @name.setter
     def name(self, value):
         if value.strip() == "":
-            raise ValueError("Climber name cannot be null or empty")
+            raise ValueError("Climber name cannot be null or empty!")
 
         self.__name = value
 
@@ -26,7 +26,7 @@ class BaseClimber(ABC):
     @strength.setter
     def strength(self, value):
         if value <= 0:
-            raise ValueError("A climber cannot have negative strength equal to 0!")
+            raise ValueError("A climber cannot have negative strength or strength equal to 0!")
 
         self.__strength = value
 
@@ -43,5 +43,5 @@ class BaseClimber(ABC):
 
     def __str__(self):
         result = f"{self.__class__.__name__}: /// Climber name: {self.name} * Left strength: {self.strength:.1f} * "
-        result += f"Conquered peaks: {', '.join(sorted(self.conquered_peaks))}"
+        result += f"Conquered peaks: {', '.join(sorted(self.conquered_peaks))} ///"
         return result

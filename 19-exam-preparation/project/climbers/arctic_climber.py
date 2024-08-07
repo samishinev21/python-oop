@@ -3,8 +3,8 @@ from project.peaks.base_peak import BasePeak
 
 
 class ArcticClimber(BaseClimber):
-    def __init__(self, name, strength=200):
-        super().__init__(name, strength)
+    def __init__(self, name):
+        super().__init__(name, 200)
 
     def climb(self, peak: BasePeak):
         if peak.difficulty_level == "Extreme":

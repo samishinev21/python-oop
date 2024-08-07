@@ -1,7 +1,7 @@
-from climbers.arctic_climber import ArcticClimber
-from climbers.base_climber import BaseClimber
-from climbers.summit_climber import SummitClimber
-from peaks.base_peak import BasePeak
+from project.climbers.arctic_climber import ArcticClimber
+from project.climbers.base_climber import BaseClimber
+from project.climbers.summit_climber import SummitClimber
+from project.peaks.base_peak import BasePeak
 from project.peaks.arctic_peak import ArcticPeak
 from project.peaks.summit_peak import SummitPeak
 
@@ -90,10 +90,9 @@ class SummitQuestManagerApp:
                     climbed_peaks.add(peak)
 
         result = f"Total climbed peaks: {len(climbed_peaks)}\n"
-        result += "**Climber's statistics:**"
+        result += "**Climber's statistics:**\n"
         sorted_climbers = sorted(climbed_climbers, key=lambda clm: (-len(clm.conquered_peaks), clm.name))
-        for climber in sorted_climbers:
-            result += f"\n{str(climber)}"
+        result += "\n".join(str(c) for c in sorted_climbers)
 
         return result
 
@@ -106,42 +105,3 @@ class SummitQuestManagerApp:
         for peak in self.peaks:
             if peak.name == name:
                 return peak
-
-
-climbing_app = SummitQuestManagerApp()
-
-# Register climbers
-print(climbing_app.register_climber("ArcticClimber", "Alice"))
-print(climbing_app.register_climber("SummitClimber", "Bob"))
-print(climbing_app.register_climber("ExtremeClimber", "Dave"))
-print(climbing_app.register_climber("ArcticClimber", "Charlie"))
-print(climbing_app.register_climber("ArcticClimber", "Alice"))
-print(climbing_app.register_climber("SummitClimber", "Eve"))
-print(climbing_app.register_climber("SummitClimber", "Frank"))
-
-# Add peaks to the wish list
-print(climbing_app.peak_wish_list("ArcticPeak", "MountEverest", 4000))
-print(climbing_app.peak_wish_list("SummitPeak", "K2", 3000))
-print(climbing_app.peak_wish_list("ArcticPeak", "Denali", 2500))
-print(climbing_app.peak_wish_list("UnchartedPeak", "MysteryMountain", 2000))
-
-# Prepare climbers for climbing
-print(climbing_app.check_gear("Alice", "MountEverest", ["Ice axe", "Crampons", "Insulated clothing", "Helmet"]))
-print(climbing_app.check_gear("Bob", "K2", ["Climbing helmet", "Harness", "Climbing shoes", "Ropes"]))
-print(climbing_app.check_gear("Charlie", "Denali", ["Ice axe", "Crampons"]))
-
-# Perform climbing
-print(climbing_app.perform_climbing("Alice", "MountEverest"))
-print(climbing_app.perform_climbing("Bob", "K2"))
-print(climbing_app.perform_climbing("Kelly", "Denali"))
-print(climbing_app.perform_climbing("Alice", "K2"))
-print(climbing_app.perform_climbing("Alice", "MysteryMountain"))
-print(climbing_app.perform_climbing("Eve", "MountEverest"))
-print(climbing_app.perform_climbing("Charlie", "MountEverest"))
-print(climbing_app.perform_climbing("Frank", "K2"))
-print(climbing_app.perform_climbing("Frank", "Denali"))
-print(climbing_app.perform_climbing("Frank", "MountEverest"))
-
-# Get statistics
-print(climbing_app.get_statistics())
-

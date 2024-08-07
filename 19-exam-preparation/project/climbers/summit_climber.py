@@ -3,8 +3,8 @@ from project.climbers.base_climber import BaseClimber
 
 
 class SummitClimber(BaseClimber):
-    def __init__(self, name, strength=150):
-        super().__init__(name, strength)
+    def __init__(self, name):
+        super().__init__(name, 150)
 
     def can_climb(self):
         return self.strength >= 75
