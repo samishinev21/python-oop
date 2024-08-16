@@ -40,3 +40,4 @@ class BaseFish(ABC):
     @abstractmethod
     def fish_details(self):
         pass
+
